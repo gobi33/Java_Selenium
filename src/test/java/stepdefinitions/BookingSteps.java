@@ -30,5 +30,21 @@ public class BookingSteps {
     public void bookticket(){
       System.out.println("The travels name : "+book.bookticket());
     }
+    @When("the user need to select flight option")
+    public void selectflight(){
+        book.selectflight();
+    }
+    @When("the user selects the {string} and {string} locations for flight")
+    public void select_flightPlace(String source, String destinstion){
+        book.select_flightplace(source,destinstion);
+    }
+    @When("the user selects the details about the journey")
+    public void flight_details(){
+         book.flight_details();
+    }
+    @Then("the user able to book the flight")
+    public void book_ticket(){
+        book.book_ticket();
+    }
 
 }
