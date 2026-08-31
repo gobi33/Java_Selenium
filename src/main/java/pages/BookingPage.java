@@ -34,7 +34,7 @@ public class BookingPage {
     }
     public void selectdate(){
         WaitUtil.WebForElement(driver,By.xpath("//input[@placeholder='Onward Journey Date']")).click();
-        WaitUtil.WebForElement(driver,By.xpath("//*[text()='28']")).click();
+        WaitUtil.WebForElement(driver,By.xpath("//*[text()='31']")).click();
         WaitUtil.WebForElement(driver,By.xpath("//*[@id='search-button']/a/span[2]")).click();
     }
     public String bookticket(){
