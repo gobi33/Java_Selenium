@@ -8,7 +8,7 @@
         <classes>
 
             <class name="runners.SmokeRunner"/>
-            <!-- <class name="runners.TestRunner"/> -->
+            <class name="runners.TestRunner"/>
 
         </classes>
 
