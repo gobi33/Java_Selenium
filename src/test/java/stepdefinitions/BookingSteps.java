@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en_old.Tha;
 import pages.BookingPage;
 import utils.ConfigReader;
+import utils.ExcelUtil;
 
 public class BookingSteps {
     WebDriver driver;
@@ -45,6 +46,19 @@ public class BookingSteps {
     @Then("the user able to book the flight")
     public void book_ticket(){
         book.book_ticket();
+    }
+
+    @When("the user selects flight locations from excel")
+    public void selectFlightLocationsFromExcel() throws Exception {
+    ExcelUtil.loadExcel();
+    int rowCount =ExcelUtil.getRowCount();
+    for(int i = 1; i <= rowCount; i++) {
+        String source =ExcelUtil.getCellData(i, 0);
+        String destination =ExcelUtil.getCellData(i, 1);
+        System.out.println(source + " -> " + destination);
+        book.select_flightplace(source, destination);
+        }
+    ExcelUtil.closeExcel();
     }
 
 }

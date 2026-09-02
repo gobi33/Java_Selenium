@@ -34,7 +34,7 @@ public class BookingPage {
     }
     public void selectdate(){
         WaitUtil.WebForElement(driver,By.xpath("//input[@placeholder='Onward Journey Date']")).click();
-        WaitUtil.WebForElement(driver,By.xpath("//*[text()='31']")).click();
+        WaitUtil.WebForElement(driver,By.xpath("//*[text()='11']")).click();
         WaitUtil.WebForElement(driver,By.xpath("//*[@id='search-button']/a/span[2]")).click();
     }
     public String bookticket(){
@@ -58,11 +58,22 @@ public class BookingPage {
         }  
     }
     public void select_flightplace(String source, String destination){
+
         String proof=WaitUtil.WebForElement(driver, By.xpath("//h1[@class='body-lg text-primary']")).getText();
         System.out.println("Need to fill the details  "+ proof);
+       WaitUtil.WebForElement(driver, By.xpath("//p[@data-testid='originId']")).click();
+       WaitUtil.WebForElement(driver, By.xpath("//*[local-name()='svg' and @data-testid='CloseIcon']")).click();
+       WaitUtil.WebForElement(driver, By.xpath("//label[contains(text(),'From')]/following-sibling::input")).sendKeys(source);
+       WaitUtil.WebForElement(driver,By.xpath("(//span[contains(text(),'"+source+"')])[1]")).click();
+       WaitUtil.WebForElement(driver, By.xpath("//label[contains(text(),'To')]/following-sibling::input")).sendKeys(destination);
+       WaitUtil.WebForElement(driver, By.xpath("//span[contains(text(),'"+destination+"')]")).click();
+       WaitUtil.ClickForElement(driver,By.xpath("//*[text()='10']")).click();
+
     }
     public void flight_details(){
         System.out.println("Need to complete the details");
+        WaitUtil.WebForElement(driver,By.xpath("//button[text()='Done']")).click();
+         WaitUtil.WebForElement(driver,By.xpath("//button[text()='Search']")).click();
     }
     public void book_ticket(){
         System.out.println("Ticket booking completed ");

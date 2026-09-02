@@ -27,7 +27,7 @@ public class LoginPage {
         this.wait=new WebDriverWait(driver, Duration.ofSeconds(5));
     }
     public void enterCredentials() {
-          WaitUtil.WebForElement(driver, By.id("Email")).sendKeys("DemoWebsite@gmail.com");
+         WaitUtil.WebForElement(driver, By.id("Email")).sendKeys("DemoWebsite@gmail.com");
         WaitUtil.WebForElement(driver, By.id("Password")).sendKeys("Website@123");
     }
     public void clickLogin() {

@@ -67,7 +67,12 @@
     <artifactId>extentreports</artifactId>
     <version>5.1.2</version>
 </dependency>
-
+<!-- Apache POI -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>5.4.1</version>
+</dependency>
     </dependencies>
 
    <build>
@@ -88,10 +93,9 @@
             <version>3.1.2</version>
 
             <configuration>
-                <includes>
-                    <include>**/*Runner.java</include>
-                    <include>**/*Test.java</include>
-                </includes>
+                <suiteXmlFiles>
+             <suiteXmlFile>testng.xml</suiteXmlFile>
+                </suiteXmlFiles>
             </configuration>
 
         </plugin>
