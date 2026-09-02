@@ -7,7 +7,6 @@ import io.cucumber.testng.CucumberOptions;
 
         features =
         "src/test/resources/features",
-        tags = "Regression",
 
         glue =
         "stepdefinitions",
