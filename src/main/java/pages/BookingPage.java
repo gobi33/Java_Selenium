@@ -81,7 +81,7 @@ public class BookingPage {
        WaitUtil.WebForElement(driver, flight_from).click();
        WaitUtil.WebForElement(driver, fight_from_clear).click();
        WaitUtil.WebForElement(driver, flight_from_sendkeys).sendKeys(source);
-       WaitUtil.WebForElement(driver,bus_from_city_click(source)).click();
+       WaitUtil.WebForElement(driver,By.xpath("(//span[contains(text(),'"+source+"')])[1]")).click();
        WaitUtil.WebForElement(driver, flight_to_sendkeys).sendKeys(destination);
        WaitUtil.WebForElement(driver, bus_from_city_click(destination)).click();
        WaitUtil.ClickForElement(driver, fight_date).click();
